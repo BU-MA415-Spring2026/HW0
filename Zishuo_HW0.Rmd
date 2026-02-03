@@ -1,0 +1,41 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+```{r}
+draw_cat <- function() { 
+op <- par(mar = c(0, 0, 0, 0)) 
+on.exit(par(op), add = TRUE) 
+plot.new() 
+plot.window(xlim = c(0, 1), ylim = c(0, 1), asp = 1) 
+# Head 
+symbols(0.5, 0.55, circles = 0.28, 
+inches = FALSE, add = TRUE, fg = "black", bg = "white") 
+# Ears 
+polygon(c(0.32, 0.40, 0.45), c(0.72, 0.92, 0.72), col = "white") 
+polygon(c(0.55, 0.60, 0.68), c(0.72, 0.92, 0.72), col = "white") 
+# Inner ears 
+polygon(c(0.35, 0.40, 0.43), c(0.73, 0.86, 0.73), col = "pink", border = NA) 
+polygon(c(0.57, 0.60, 0.65), c(0.73, 0.86, 0.73), col = "pink", border = NA) 
+# Eyes 
+symbols(c(0.42, 0.58), c(0.60, 0.60), 
+circles = c(0.03, 0.03), inches = FALSE, add = TRUE, bg = "black") 
+symbols(c(0.42, 0.58), c(0.61, 0.61), 
+circles = c(0.01, 0.01), inches = FALSE, add = TRUE, bg = "white") 
+# Nose 
+polygon(c(0.49, 0.51, 0.50), c(0.54, 0.54, 0.50), col = "pink") 
+# Mouth 
+lines(c(0.50, 0.47), c(0.50, 0.47), lwd = 2) 
+lines(c(0.50, 0.53), c(0.50, 0.47), lwd = 2) 
+# Whiskers 
+segments(0.28, 0.52, 0.42, 0.50, lwd = 2) 
+segments(0.28, 0.48, 0.42, 0.48, lwd = 2) 
+segments(0.28, 0.44, 0.42, 0.46, lwd = 2) 
+segments(0.72, 0.52, 0.58, 0.50, lwd = 2) 
+segments(0.72, 0.48, 0.58, 0.48, lwd = 2) 
+segments(0.72, 0.44, 0.58, 0.46, lwd = 2) 
+} 
+draw_cat()
+```
+
